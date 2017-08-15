@@ -17,7 +17,7 @@ def main():
                 print('Gladiator2 is dead, Gladiator1 wins.')
                 break
         elif choice == 'heal':
-            core.heal(gladiator)
+            core.heal(gladiator_1)
         elif choice == 'pass':
             print('pass')
         elif choice == 'quit':
@@ -36,7 +36,7 @@ def main():
                 print('Gladiator1 is dead, Gladiator2 wins.')
                 break
         elif choice == 'heal':
-            core.heal(gladiator)
+            core.heal(gladiator_2)
         elif choice == 'pass':
             print('pass')
         elif choice == 'quit':
