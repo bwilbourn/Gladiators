@@ -28,9 +28,16 @@ def heal(gladiator):
 def attack(attacker, defender):
     damage_dealt = randint(attacker['damage_low'], attacker['damage_high'])
     if randint(1, 100) <= attacker['rage']:
-        defender['health'] = damage_dealt * 2
+        defender['health'] -= damage_dealt * 2
         attacker['rage'] = 0
     else:
         defender['health'] -= damage_dealt
         attacker['rage'] += 15
     return attacker, defender
+
+
+def punch(attacker, defender):
+    super_punch = attacker['damage_high']
+    defender['health'] -= super_punch * 2
+    attacker['rage'] = 0
+    attacker['health'] = attacker['health'] * .5

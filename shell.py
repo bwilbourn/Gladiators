@@ -9,10 +9,16 @@ def main():
         choice = input("""Gladiator1, what's your move?\n
         \t-heal
         \t-attack
+        \t-power punch
         \t-pass
         \t-quit\n""")
         if choice == 'attack':
             core.attack(gladiator_1, gladiator_2)
+            if core.is_dead(gladiator_2):
+                print('Gladiator2 is dead, Gladiator1 wins.')
+                break
+        elif choice == 'power punch':
+            core.punch(gladiator_1, gladiator_2)
             if core.is_dead(gladiator_2):
                 print('Gladiator2 is dead, Gladiator1 wins.')
                 break
@@ -28,12 +34,18 @@ def main():
         choice = input("""Gladiator2, what's your move?\n
         \t-heal
         \t-attack
+        \t-power punch
         \t-pass
         \t-quit\n""")
         if choice == 'attack':
             core.attack(gladiator_2, gladiator_1)
             if core.is_dead(gladiator_1):
                 print('Gladiator1 is dead, Gladiator2 wins.')
+                break
+        elif choice == 'power punch':
+            core.punch(gladiator_2, gladiator_1)
+            if core.is_dead(gladiator_1):
+                print('Gladiator2 is dead, Gladiator1 wins.')
                 break
         elif choice == 'heal':
             core.heal(gladiator_2)
